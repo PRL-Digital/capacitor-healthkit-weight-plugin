@@ -1,16 +1,5 @@
 {
   "appId": "com.healthkittest.app",
   "appName": "capacitor-healthkit-test",
-  "webDir": "public",
-  "plugins": {
-    "CapacitorCookies": {
-      "enabled": true
-    }
-  },
-  "ios": {
-    "limitsNavigationsToAppBoundDomains": true
-  },
-  "server": {
-    "androidScheme": "http"
-  }
+  "webDir": "out"
 }

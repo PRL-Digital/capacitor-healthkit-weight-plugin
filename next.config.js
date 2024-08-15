@@ -5,4 +5,6 @@ const config = {
     unoptimized: true,
   },
   output: "export",
-}
+};
+
+module.exports = config;

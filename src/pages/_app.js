@@ -1,5 +1,7 @@
 import Head from "next/head";
 
+import "../../root.css";
+
 function MyApp({ Component, pageProps }) {
   return (
     <>
@@ -11,7 +13,16 @@ function MyApp({ Component, pageProps }) {
         <title>Tester</title>
       </Head>
 
-      <Component {...pageProps} />
+      <div
+        style={{
+          paddingTop: "env(safe-area-inset-top)",
+          paddingBottom: "env(safe-area-inset-bottom)",
+          paddingLeft: "env(safe-area-inset-left)",
+          paddingRight: "env(safe-area-inset-right)",
+        }}
+      >
+        <Component {...pageProps} />
+      </div>
     </>
   );
 }

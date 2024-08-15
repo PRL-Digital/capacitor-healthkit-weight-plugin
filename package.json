@@ -14,10 +14,7 @@
     "story": "storybook dev -p 6006",
     "process-ai": "env-cmd -f .env.local-prod yarn dev",
     "build-storybook": "storybook build",
-    "build-andr:local": "env-cmd -f .env.local yarn static && npx cap sync android && npx cap copy android && npx cap open android",
-    "build-andr:prod": "env-cmd -f .env.production yarn static && npx cap sync android && npx cap copy android && npx cap open android",
-    "build-ios:local": "env-cmd -f .env.local yarn static && npx cap sync ios && npx cap copy ios && npx cap open ios",
-    "build-ios:prod": "env-cmd -f .env.production yarn static && npx cap sync ios && npx cap copy ios && npx cap open ios"
+    "build-ios": " yarn static && npx cap sync ios && npx cap copy ios && npx cap open ios"
   },
   "dependencies": {
     "@capacitor/android": "^6.1.1",
@@ -40,6 +37,7 @@
   },
   "devDependencies": {
     "@capacitor/cli": "^6.1.1",
+    "@types/react": "18.3.3",
     "cross-env": "^7.0.3",
     "eslint": "8.57.0",
     "eslint-config-next": "14.2.5",

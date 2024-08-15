@@ -8,8 +8,8 @@
   "unpkg": "dist/plugin.js",
   "files": [
     "dist/",
-    "ios/Sources",
-    "ios/Tests",
+    "ios/Sources/CapacitorHealthkit",
+    "ios/Tests/CapacitorHealthkitTests",
     "Package.swift",
     "CapacitorHealthkit.podspec"
   ],
