@@ -1,7 +1,7 @@
 {
-  "appId": "com.ditchyourdiet.app",
-  "appName": "Ditch Your Diet",
-  "webDir": "out",
+  "appId": "com.healthkittest.app",
+  "appName": "capacitor-healthkit-test",
+  "webDir": "public",
   "plugins": {
     "CapacitorCookies": {
       "enabled": true

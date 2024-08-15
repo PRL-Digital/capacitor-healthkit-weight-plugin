@@ -4,9 +4,7 @@ import type {
   AuthorizationStatus,
   CapacitorHealthkitPlugin,
   GetAuthorizationStatusOptions,
-  StatisticsCollectionOptions,
   BodyMassQueryOptions,
-  StatisticsCollectionOutput,
   BodyMassQueryOutput,
 } from './definitions';
 
@@ -33,16 +31,10 @@ export class CapacitorHealthkitWeb
     throw new Error('Method not implemented.');
   }
 
-  async getStatisticsCollection(
-    options: StatisticsCollectionOptions,
-  ): Promise<StatisticsCollectionOutput> {
+  async getBodyMassEntries(
+    options: BodyMassQueryOptions,
+  ): Promise<BodyMassQueryOutput> {
     console.log({ options });
     throw new Error('Method not implemented.');
   }
-
-  async getBodyMassEntries(options: BodyMassQueryOptions): Promise<BodyMassQueryOutput> {
-    console.log({ options });
-    throw new Error('Method not implemented.');
-  }
-
 }
