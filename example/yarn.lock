@@ -234,7 +234,7 @@ __metadata:
   languageName: node
   linkType: hard
 
-"@capacitor/android@npm:^6.0.0":
+"@capacitor/android@npm:^6.1.2":
   version: 6.1.2
   resolution: "@capacitor/android@npm:6.1.2"
   peerDependencies:
@@ -243,7 +243,7 @@ __metadata:
   languageName: node
   linkType: hard
 
-"@capacitor/camera@npm:latest":
+"@capacitor/camera@npm:^6.0.2":
   version: 6.0.2
   resolution: "@capacitor/camera@npm:6.0.2"
   peerDependencies:
@@ -252,7 +252,7 @@ __metadata:
   languageName: node
   linkType: hard
 
-"@capacitor/cli@npm:latest":
+"@capacitor/cli@npm:^6.1.2":
   version: 6.1.2
   resolution: "@capacitor/cli@npm:6.1.2"
   dependencies:
@@ -281,7 +281,7 @@ __metadata:
   languageName: node
   linkType: hard
 
-"@capacitor/core@npm:latest":
+"@capacitor/core@npm:^6.1.2":
   version: 6.1.2
   resolution: "@capacitor/core@npm:6.1.2"
   dependencies:
@@ -290,7 +290,7 @@ __metadata:
   languageName: node
   linkType: hard
 
-"@capacitor/ios@npm:^6.0.0":
+"@capacitor/ios@npm:^6.1.2":
   version: 6.1.2
   resolution: "@capacitor/ios@npm:6.1.2"
   peerDependencies:
@@ -299,7 +299,7 @@ __metadata:
   languageName: node
   linkType: hard
 
-"@capacitor/splash-screen@npm:latest":
+"@capacitor/splash-screen@npm:^6.0.2":
   version: 6.0.2
   resolution: "@capacitor/splash-screen@npm:6.0.2"
   peerDependencies:
@@ -1352,16 +1352,16 @@ __metadata:
   version: 0.0.0-use.local
   resolution: "capacitor-app@workspace:."
   dependencies:
-    "@capacitor/android": ^6.0.0
-    "@capacitor/camera": latest
-    "@capacitor/cli": latest
-    "@capacitor/core": latest
-    "@capacitor/ios": ^6.0.0
-    "@capacitor/splash-screen": latest
+    "@capacitor/android": ^6.1.2
+    "@capacitor/camera": ^6.0.2
+    "@capacitor/cli": ^6.1.2
+    "@capacitor/core": ^6.1.2
+    "@capacitor/ios": ^6.1.2
+    "@capacitor/splash-screen": ^6.0.2
     "@vitejs/plugin-react": ^4.3.1
     eslint: ^9.9.0
     eslint-plugin-react: ^7.35.0
-    eslint-plugin-react-hooks: ^5.1.0-rc.0
+    eslint-plugin-react-hooks: ^5.1.0-rc-fb9a90fa48-20240614
     eslint-plugin-react-refresh: ^0.4.9
     react: ^18.3.1
     react-dom: ^18.3.1
@@ -1851,7 +1851,7 @@ __metadata:
   languageName: node
   linkType: hard
 
-"eslint-plugin-react-hooks@npm:^5.1.0-rc.0":
+"eslint-plugin-react-hooks@npm:^5.1.0-rc-fb9a90fa48-20240614":
   version: 5.1.0-rc-fb9a90fa48-20240614
   resolution: "eslint-plugin-react-hooks@npm:5.1.0-rc-fb9a90fa48-20240614"
   peerDependencies:
