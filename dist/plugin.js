@@ -6,6 +6,9 @@ var HealthKit = (function (exports, core) {
     });
 
     class HealthKitWeb extends core.WebPlugin {
+        useOnDevice() {
+            return false;
+        }
         async requestAuthorization(_options) {
             throw new Error('Not available on web');
         }

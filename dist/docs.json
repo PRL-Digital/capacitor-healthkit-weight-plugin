@@ -72,7 +72,15 @@
         "slug": "getbodymassentries"
       }
     ],
-    "properties": []
+    "properties": [
+      {
+        "name": "useOnDevice",
+        "tags": [],
+        "docs": "",
+        "complexTypes": [],
+        "type": "() => boolean"
+      }
+    ]
   },
   "interfaces": [
     {

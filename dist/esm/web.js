@@ -1,5 +1,8 @@
 import { WebPlugin } from '@capacitor/core';
 export class HealthKitWeb extends WebPlugin {
+    useOnDevice() {
+        return false;
+    }
     async requestAuthorization(_options) {
         throw new Error('Not available on web');
     }

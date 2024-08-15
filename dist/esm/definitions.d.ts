@@ -1,4 +1,5 @@
 export interface HealthKitPlugin {
+    useOnDevice: () => boolean;
     requestAuthorization(options: RequestAuthorizationOptions): Promise<void>;
     isAvailable(): Promise<void>;
     getAuthorizationStatus(options: GetAuthorizationStatusOptions): Promise<{

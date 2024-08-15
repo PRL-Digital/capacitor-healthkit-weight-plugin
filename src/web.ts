@@ -10,9 +10,6 @@ import type {
 } from './definitions';
 
 export class HealthKitWeb extends WebPlugin implements HealthKitPlugin {
-  // HealthKit is not available on web, so we can't use it on the device
-  useOnDevice: boolean = false;
-
   async requestAuthorization(
     _options: RequestAuthorizationOptions,
   ): Promise<void> {

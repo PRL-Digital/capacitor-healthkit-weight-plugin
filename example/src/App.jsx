@@ -6,10 +6,10 @@ function App() {
   const [authorizationStatus, setAuthorizationStatus] = useState(null);
   const [weightEntries, setWeightEntries] = useState([]);
 
-  console.log(HealthKit.useOnDevice());
-
   useEffect(() => {
     HealthKit.isAvailable().then(setAuthorizationStatus);
+
+    console.log(HealthKit.useOnDevice());
   }, []);
 
   useEffect(() => {
