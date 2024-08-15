@@ -13,28 +13,28 @@ export class CapacitorHealthkitWeb
   implements CapacitorHealthkitPlugin
 {
   async echo(): Promise<void> {
-    throw new Error('Method not implemented.');
+    throw new Error('Not available on web');
   }
 
   async requestAuthorization(): Promise<void> {
-    throw new Error('Method not implemented.');
+    throw new Error('Not available on web');
   }
 
   async isAvailable(): Promise<void> {
-    throw new Error('Method not implemented.');
+      throw new Error('Not available on web');
   }
 
   async getAuthorizationStatus(
     options: GetAuthorizationStatusOptions,
   ): Promise<{ status: AuthorizationStatus }> {
     console.log({ options });
-    throw new Error('Method not implemented.');
+       throw new Error('Not available on web');
   }
 
   async getBodyMassEntries(
     options: BodyMassQueryOptions,
   ): Promise<BodyMassQueryOutput> {
     console.log({ options });
-    throw new Error('Method not implemented.');
+    throw new Error('Not available on web');
   }
 }
