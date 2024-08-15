@@ -1,4 +1,4 @@
-var capacitorHealthKit = (function (exports, core) {
+var HealthKit = (function (exports, core) {
     'use strict';
 
     const HealthKit = core.registerPlugin('HealthKit', {
@@ -6,9 +6,17 @@ var capacitorHealthKit = (function (exports, core) {
     });
 
     class HealthKitWeb extends core.WebPlugin {
-        async echo(options) {
-            console.log('ECHO', options);
-            return options;
+        async requestAuthorization(_options) {
+            throw new Error('Not available on web');
+        }
+        async isAvailable() {
+            throw new Error('Not available on web');
+        }
+        async getAuthorizationStatus(_options) {
+            throw new Error('Not available on web');
+        }
+        async getBodyMassEntries(_options) {
+            throw new Error('Not available on web');
         }
     }
 

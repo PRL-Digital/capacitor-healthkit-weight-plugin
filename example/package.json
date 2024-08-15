@@ -2,7 +2,7 @@
   "name": "capacitor-app",
   "version": "1.0.0",
   "description": "An Amazing Capacitor App",
-  "main": "index.js",
+  "type": "module",
   "keywords": [
     "capacitor",
     "mobile"
@@ -13,17 +13,26 @@
     "preview": "vite preview"
   },
   "dependencies": {
-    "@capacitor/core": "latest",
+    "@capacitor/android": "^6.0.0",
     "@capacitor/camera": "latest",
-    "@capacitor/splash-screen": "latest",
-    "capacitor-healthkit": "file:..",
+    "@capacitor/core": "latest",
     "@capacitor/ios": "^6.0.0",
-    "@capacitor/android": "^6.0.0"
+    "@capacitor/splash-screen": "latest",
+    "@vitejs/plugin-react": "^4.3.1",
+    "eslint": "^9.9.0",
+    "eslint-plugin-react": "^7.35.0",
+    "eslint-plugin-react-hooks": "^5.1.0-rc.0",
+    "eslint-plugin-react-refresh": "^0.4.9",
+    "react": "^18.3.1",
+    "react-dom": "^18.3.1"
   },
   "devDependencies": {
     "@capacitor/cli": "latest",
-    "vite": "^2.9.13"
+    "vite": "^5.4.1"
   },
   "author": "",
-  "license": "ISC"
+  "license": "ISC",
+  "resolutions": {
+    "capacitor-healthkit": "portal:.."
+  }
 }

@@ -4,7 +4,7 @@ PODS:
   - CapacitorCamera (6.0.2):
     - Capacitor
   - CapacitorCordova (6.1.2)
-  - CapacitorHealthkit (0.0.1):
+  - HealthKit (0.0.1):
     - Capacitor
   - CapacitorSplashScreen (6.0.2):
     - Capacitor
@@ -13,7 +13,7 @@ DEPENDENCIES:
   - "Capacitor (from `../../node_modules/@capacitor/ios`)"
   - "CapacitorCamera (from `../../node_modules/@capacitor/camera`)"
   - "CapacitorCordova (from `../../node_modules/@capacitor/ios`)"
-  - CapacitorHealthkit (from `../../..`)
+  - HealthKit (from `../../..`)
   - "CapacitorSplashScreen (from `../../node_modules/@capacitor/splash-screen`)"
 
 EXTERNAL SOURCES:
@@ -23,7 +23,7 @@ EXTERNAL SOURCES:
     :path: "../../node_modules/@capacitor/camera"
   CapacitorCordova:
     :path: "../../node_modules/@capacitor/ios"
-  CapacitorHealthkit:
+  HealthKit:
     :path: "../../.."
   CapacitorSplashScreen:
     :path: "../../node_modules/@capacitor/splash-screen"
@@ -32,7 +32,7 @@ SPEC CHECKSUMS:
   Capacitor: 679f9673fdf30597493a6362a5d5bf233d46abc2
   CapacitorCamera: ed022171dbf3853e68eec877b4d78995378af6b7
   CapacitorCordova: f48c89f96c319101cd2f0ce8a2b7449b5fb8b3dd
-  CapacitorHealthkit: 82252770110734e7c5b01bafbd5cfb12e8914573
+  HealthKit: 82252770110734e7c5b01bafbd5cfb12e8914573
   CapacitorSplashScreen: 250df9ef8014fac5c7c1fd231f0f8b1d8f0b5624
 
 PODFILE CHECKSUM: d1f1bf13c2e142db87fe7a75a9d08d95e2ed69d7

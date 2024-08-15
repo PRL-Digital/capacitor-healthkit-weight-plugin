@@ -1,9 +1,10 @@
 import { WebPlugin } from '@capacitor/core';
-import type { HealthKitPlugin } from './definitions';
+import type { AuthorizationStatus, HealthKitPlugin, GetAuthorizationStatusOptions, BodyMassQueryOptions, BodyMassQueryOutput, RequestAuthorizationOptions } from './definitions';
 export declare class HealthKitWeb extends WebPlugin implements HealthKitPlugin {
-    echo(options: {
-        value: string;
-    }): Promise<{
-        value: string;
+    requestAuthorization(_options: RequestAuthorizationOptions): Promise<void>;
+    isAvailable(): Promise<void>;
+    getAuthorizationStatus(_options: GetAuthorizationStatusOptions): Promise<{
+        status: AuthorizationStatus;
     }>;
+    getBodyMassEntries(_options: BodyMassQueryOptions): Promise<BodyMassQueryOutput>;
 }
