@@ -4,7 +4,7 @@ export default {
     {
       file: 'dist/plugin.js',
       format: 'iife',
-      name: 'HealthKit',
+      name: 'CapacitorHealthKit',
       globals: {
         '@capacitor/core': 'capacitorExports',
       },

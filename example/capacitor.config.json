@@ -1,10 +1,10 @@
 {
-  "appId": "com.example.plugin",
-  "appName": "example",
+  "appId": "com.vibewithmaggie.healthkitapptest",
+  "appName": "Healthkit App Test",
   "webDir": "dist",
   "plugins": {
-    "SplashScreen": {
-      "launchShowDuration": 0
+    "CapacitorHealthKit": {
+      "ios": "CapacitorHealthKit"
     }
   }
 }

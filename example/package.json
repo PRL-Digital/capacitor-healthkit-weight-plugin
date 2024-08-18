@@ -17,8 +17,9 @@
     "@capacitor/camera": "^6.0.2",
     "@capacitor/core": "^6.1.2",
     "@capacitor/ios": "^6.1.2",
-    "@capacitor/splash-screen": "^6.0.2",
+    "@types/node": "^22.4.0",
     "@vitejs/plugin-react": "^4.3.1",
+    "capacitor-healthkit-plugin": "file:..",
     "eslint": "^9.9.0",
     "eslint-plugin-react": "^7.35.0",
     "eslint-plugin-react-hooks": "^5.1.0-rc-fb9a90fa48-20240614",
@@ -31,8 +32,5 @@
     "vite": "^5.4.1"
   },
   "author": "",
-  "license": "ISC",
-  "resolutions": {
-    "capacitor-healthkit": "portal:.."
-  }
+  "license": "ISC"
 }

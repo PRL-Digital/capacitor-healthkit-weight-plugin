@@ -1,12 +1,8 @@
-export interface HealthKitPlugin {
+export interface CapacitorHealthKitPlugin {
   requestAuthorization(options: RequestAuthorizationOptions): Promise<void>;
   isAvailable(): Promise<void>;
-  getAuthorizationStatus(
-    options: GetAuthorizationStatusOptions,
-  ): Promise<{ status: AuthorizationStatus }>;
-  getBodyMassEntries(
-    options: BodyMassQueryOptions,
-  ): Promise<BodyMassQueryOutput>;
+  getAuthorizationStatus(options: GetAuthorizationStatusOptions): Promise<{ status: AuthorizationStatus }>;
+  getBodyMassEntries(options: BodyMassQueryOptions): Promise<BodyMassQueryOutput>;
 }
 
 export interface RequestAuthorizationOptions {
@@ -19,10 +15,7 @@ export interface GetAuthorizationStatusOptions {
   sampleType: string;
 }
 
-export type AuthorizationStatus =
-  | 'notDetermined'
-  | 'sharingDenied'
-  | 'sharingAuthorized';
+export type AuthorizationStatus = 'notDetermined' | 'sharingDenied' | 'sharingAuthorized';
 
 export interface BodyMassQueryOptions {
   startDate: string;

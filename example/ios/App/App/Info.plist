@@ -5,7 +5,7 @@
 	<key>CFBundleDevelopmentRegion</key>
 	<string>en</string>
 	<key>CFBundleDisplayName</key>
-        <string>example</string>
+        <string>Healthkit App Test</string>
 	<key>CFBundleExecutable</key>
 	<string>$(EXECUTABLE_NAME)</string>
 	<key>CFBundleIdentifier</key>
@@ -45,9 +45,5 @@
 	</array>
 	<key>UIViewControllerBasedStatusBarAppearance</key>
 	<true/>
-	<key>NSHealthShareUsageDescription</key>
-	<string>We need access to your health data to provide you with accurate information about your weight.</string>
-	<key>NSHealthUpdateUsageDescription</key>
-	<string>We need permission to update your health data with new weight measurements.</string>
 </dict>
 </plist>

@@ -8,20 +8,6 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
 
     func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplication.LaunchOptionsKey: Any]?) -> Bool {
         // Override point for customization after application launch.
-
-        // Initialize HealthKit
-        if HKHealthStore.isHealthDataAvailable() {
-            let healthStore = HKHealthStore()
-            let typesToShare: Set = [HKQuantityType.quantityType(forIdentifier: .bodyMass)!]
-            let typesToRead: Set = [HKQuantityType.quantityType(forIdentifier: .bodyMass)!]
-            
-            healthStore.requestAuthorization(toShare: typesToShare, read: typesToRead) { (success, error) in
-                if !success {
-                    print("HealthKit authorization failed")
-                }
-            }
-        }
-
         return true
     }
 

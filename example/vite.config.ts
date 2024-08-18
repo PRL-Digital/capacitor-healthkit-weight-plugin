@@ -11,7 +11,7 @@ export default defineConfig({
   plugins: [react()],
   resolve: {
     alias: {
-      'capacitor-healthkit': path.resolve(__dirname, '..'),
+      'capacitor-healthkit-plugin': path.resolve(__dirname, '..'),
     },
   },
 });

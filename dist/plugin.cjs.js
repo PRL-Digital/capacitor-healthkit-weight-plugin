@@ -4,11 +4,11 @@ Object.defineProperty(exports, '__esModule', { value: true });
 
 var core = require('@capacitor/core');
 
-const HealthKit = core.registerPlugin('HealthKit', {
-    web: () => Promise.resolve().then(function () { return web; }).then(m => new m.HealthKitWeb()),
+const CapacitorHealthKit = core.registerPlugin('CapacitorHealthKit', {
+    web: () => Promise.resolve().then(function () { return web; }).then((m) => new m.CapacitorHealthKitWeb()),
 });
 
-class HealthKitWeb extends core.WebPlugin {
+class CapacitorHealthKitWeb extends core.WebPlugin {
     async requestAuthorization(_options) {
         throw new Error('Not available on web');
     }
@@ -25,8 +25,8 @@ class HealthKitWeb extends core.WebPlugin {
 
 var web = /*#__PURE__*/Object.freeze({
     __proto__: null,
-    HealthKitWeb: HealthKitWeb
+    CapacitorHealthKitWeb: CapacitorHealthKitWeb
 });
 
-exports.HealthKit = HealthKit;
+exports.CapacitorHealthKit = CapacitorHealthKit;
 //# sourceMappingURL=plugin.cjs.js.map

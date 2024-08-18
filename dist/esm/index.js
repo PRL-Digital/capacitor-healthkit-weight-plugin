@@ -1,7 +1,7 @@
 import { registerPlugin } from '@capacitor/core';
-const HealthKit = registerPlugin('HealthKit', {
-    web: () => import('./web').then(m => new m.HealthKitWeb()),
+const CapacitorHealthKit = registerPlugin('CapacitorHealthKit', {
+    web: () => import('./web').then((m) => new m.CapacitorHealthKitWeb()),
 });
 export * from './definitions';
-export { HealthKit };
+export { CapacitorHealthKit };
 //# sourceMappingURL=index.js.map

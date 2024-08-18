@@ -1,5 +1,5 @@
 import { useEffect, useState } from 'react';
-import { HealthKit } from 'capacitor-healthkit';
+import { CapacitorHealthKit } from 'capacitor-healthkit-plugin';
 
 function App() {
   const [bodyMassEntries, setBodyMassEntries] = useState([]);
@@ -7,18 +7,14 @@ function App() {
   const [weightEntries, setWeightEntries] = useState([]);
 
   useEffect(() => {
-    HealthKit.isAvailable().then(setAuthorizationStatus);
-
-    console.log(HealthKit.useOnDevice());
+    CapacitorHealthKit.isAvailable().then(setAuthorizationStatus);
   }, []);
 
   useEffect(() => {
     if (authorizationStatus === 'sharingAuthorized') {
-      HealthKit.getBodyMassEntries({
+      CapacitorHealthKit.getBodyMassEntries({
         startDate: new Date().toISOString(),
-        endDate: new Date(
-          new Date().getTime() + 1000 * 60 * 60 * 24 * 7,
-        ).toISOString(),
+        endDate: new Date(new Date().getTime() + 1000 * 60 * 60 * 24 * 7).toISOString(),
         limit: 10,
       }).then(setBodyMassEntries);
     }
@@ -32,7 +28,7 @@ function App() {
         <div>
           <h2>Body Mass</h2>
           <ul>
-            {bodyMassEntries.map(entry => (
+            {bodyMassEntries.map((entry) => (
               <li key={entry.uuid}>
                 {entry.date}
                 <br />
@@ -45,7 +41,7 @@ function App() {
       {authorizationStatus === 'sharingAuthorized' && (
         <button
           onClick={() => {
-            HealthKit.requestAuthorization({
+            CapacitorHealthKit.requestAuthorization({
               all: ['weight'],
               read: ['weight'],
               write: ['weight'],
@@ -58,7 +54,7 @@ function App() {
       {authorizationStatus === 'sharingDenied' && (
         <button
           onClick={() => {
-            HealthKit.requestAuthorization({
+            CapacitorHealthKit.requestAuthorization({
               all: ['weight'],
               read: ['weight'],
               write: ['weight'],
@@ -71,7 +67,7 @@ function App() {
 
       <h2>Body Mass</h2>
       <ul>
-        {bodyMassEntries.map(entry => (
+        {bodyMassEntries.map((entry) => (
           <li key={entry.uuid}>
             {entry.date}
             <br />
@@ -82,7 +78,7 @@ function App() {
 
       <h2>Weight</h2>
       <ul>
-        {weightEntries.map(entry => (
+        {weightEntries.map((entry) => (
           <li key={entry.uuid}>
             {entry.date}
             <br />
