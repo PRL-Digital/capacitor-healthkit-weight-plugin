@@ -16,10 +16,6 @@ public class CapacitorHealthKit: CAPPlugin, CAPBridgedPlugin {
 
     private let healthStore = HKHealthStore()
 
-    @objc func useOnDevice(_ call: CAPPluginCall) {
-        call.returnValue(true)
-    }
-
     @objc func requestAuthorization(_ call: CAPPluginCall) {
         if !HKHealthStore.isHealthDataAvailable() {
             return call.reject("Health data is not available.")
