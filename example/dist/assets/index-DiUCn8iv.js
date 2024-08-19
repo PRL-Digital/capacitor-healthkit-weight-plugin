@@ -7577,7 +7577,7 @@ registerPlugin("CapacitorHttp", {
   web: () => new CapacitorHttpPluginWeb()
 });
 const CapacitorHealthKit = registerPlugin("CapacitorHealthKit", {
-  web: () => __vitePreload(() => import("./web-BrYrP-MM.js"), true ? [] : void 0).then((m2) => new m2.CapacitorHealthKitWeb())
+  web: () => __vitePreload(() => import("./web-CMnkmTMT.js"), true ? [] : void 0).then((m2) => new m2.CapacitorHealthKitWeb())
 });
 function App() {
   const [weightEntries, setWeightEntries] = reactExports.useState([]);
@@ -7617,11 +7617,12 @@ function App() {
     try {
       const startDate = new Date(Date.now() - 30 * 24 * 60 * 60 * 1e3).toISOString();
       const endDate = (/* @__PURE__ */ new Date()).toISOString();
-      const result = await CapacitorHealthKitPlugin.getWeightEntries({
+      const result = await CapacitorHealthKit.getBodyMassEntries({
         startDate,
         endDate,
         limit: 10
       });
+      console.log(result);
       setWeightEntries(result.data);
     } catch (error) {
       console.error("Error fetching weight entries:", error);

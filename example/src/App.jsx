@@ -46,11 +46,14 @@ function App() {
     try {
       const startDate = new Date(Date.now() - 30 * 24 * 60 * 60 * 1000).toISOString(); // Last 30 days
       const endDate = new Date().toISOString();
-      const result = await CapacitorHealthKitPlugin.getWeightEntries({
+      const result = await CapacitorHealthKit.getBodyMassEntries({
         startDate,
         endDate,
         limit: 10,
       });
+
+      console.log(result);
+
       setWeightEntries(result.data);
     } catch (error) {
       console.error('Error fetching weight entries:', error);
