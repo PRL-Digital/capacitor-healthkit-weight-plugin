@@ -6,5 +6,8 @@
     "CapacitorHealthKit": {
       "ios": "CapacitorHealthKit"
     }
+  },
+  "ios": {
+    "webContentsDebuggingEnabled": true
   }
 }

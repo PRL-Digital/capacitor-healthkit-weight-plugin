@@ -7577,79 +7577,75 @@ registerPlugin("CapacitorHttp", {
   web: () => new CapacitorHttpPluginWeb()
 });
 const CapacitorHealthKit = registerPlugin("CapacitorHealthKit", {
-  web: () => __vitePreload(() => import("./web-CaL2-M6S.js"), true ? [] : void 0).then((m2) => new m2.CapacitorHealthKitWeb())
+  web: () => __vitePreload(() => import("./web-BrYrP-MM.js"), true ? [] : void 0).then((m2) => new m2.CapacitorHealthKitWeb())
 });
 function App() {
-  const [bodyMassEntries, setBodyMassEntries] = reactExports.useState([]);
-  const [authorizationStatus, setAuthorizationStatus] = reactExports.useState(null);
   const [weightEntries, setWeightEntries] = reactExports.useState([]);
+  const [authorizationStatus, setAuthorizationStatus] = reactExports.useState(null);
   reactExports.useEffect(() => {
-    CapacitorHealthKit.isAvailable().then(setAuthorizationStatus);
+    checkAuthorizationStatus();
   }, []);
   reactExports.useEffect(() => {
     if (authorizationStatus === "sharingAuthorized") {
-      CapacitorHealthKit.getBodyMassEntries({
-        startDate: (/* @__PURE__ */ new Date()).toISOString(),
-        endDate: new Date((/* @__PURE__ */ new Date()).getTime() + 1e3 * 60 * 60 * 24 * 7).toISOString(),
-        limit: 10
-      }).then(setBodyMassEntries);
+      fetchWeightEntries();
     }
   }, [authorizationStatus]);
+  const checkAuthorizationStatus = async () => {
+    try {
+      const result = await CapacitorHealthKit.getAuthorizationStatus({
+        sampleType: "weight"
+      });
+      console.log(result);
+      setAuthorizationStatus(result.status);
+    } catch (error) {
+      console.error("Error checking authorization status:", error);
+    }
+  };
+  const requestAuthorization = async () => {
+    try {
+      await CapacitorHealthKit.requestAuthorization({
+        all: ["weight"],
+        read: ["weight"],
+        write: ["weight"]
+      });
+      checkAuthorizationStatus();
+    } catch (error) {
+      console.error("Error requesting authorization:", error);
+    }
+  };
+  const fetchWeightEntries = async () => {
+    try {
+      const startDate = new Date(Date.now() - 30 * 24 * 60 * 60 * 1e3).toISOString();
+      const endDate = (/* @__PURE__ */ new Date()).toISOString();
+      const result = await CapacitorHealthKitPlugin.getWeightEntries({
+        startDate,
+        endDate,
+        limit: 10
+      });
+      setWeightEntries(result.data);
+    } catch (error) {
+      console.error("Error fetching weight entries:", error);
+    }
+  };
   return /* @__PURE__ */ jsxRuntimeExports.jsxs("div", { children: [
-    /* @__PURE__ */ jsxRuntimeExports.jsx("h1", { children: "HealthKit Example" }),
-    /* @__PURE__ */ jsxRuntimeExports.jsx("p", { children: "This example app shows how to use the HealthKit plugin." }),
+    /* @__PURE__ */ jsxRuntimeExports.jsx("h1", { children: "HealthKit Weight Tracker" }),
+    /* @__PURE__ */ jsxRuntimeExports.jsx("p", { children: "This app shows your recent weight entries from HealthKit." }),
+    authorizationStatus !== "sharingAuthorized" && /* @__PURE__ */ jsxRuntimeExports.jsx("button", { onClick: requestAuthorization, children: "Request HealthKit Authorization" }),
     authorizationStatus === "sharingAuthorized" && /* @__PURE__ */ jsxRuntimeExports.jsxs("div", { children: [
-      /* @__PURE__ */ jsxRuntimeExports.jsx("h2", { children: "Body Mass" }),
-      /* @__PURE__ */ jsxRuntimeExports.jsx("ul", { children: bodyMassEntries.map((entry) => /* @__PURE__ */ jsxRuntimeExports.jsxs("li", { children: [
-        entry.date,
+      /* @__PURE__ */ jsxRuntimeExports.jsx("h2", { children: "Weight Entries" }),
+      weightEntries.length === 0 ? /* @__PURE__ */ jsxRuntimeExports.jsx("p", { children: "No weight entries found for the last 30 days." }) : /* @__PURE__ */ jsxRuntimeExports.jsx("ul", { children: weightEntries.map((entry) => /* @__PURE__ */ jsxRuntimeExports.jsxs("li", { children: [
+        "Date: ",
+        new Date(entry.date).toLocaleString(),
         /* @__PURE__ */ jsxRuntimeExports.jsx("br", {}),
+        "Weight: ",
         entry.value,
         " ",
-        entry.unit
+        entry.unit,
+        /* @__PURE__ */ jsxRuntimeExports.jsx("br", {}),
+        "Source: ",
+        entry.sourceName
       ] }, entry.uuid)) })
-    ] }),
-    authorizationStatus === "sharingAuthorized" && /* @__PURE__ */ jsxRuntimeExports.jsx(
-      "button",
-      {
-        onClick: () => {
-          CapacitorHealthKit.requestAuthorization({
-            all: ["weight"],
-            read: ["weight"],
-            write: ["weight"]
-          }).then(setAuthorizationStatus);
-        },
-        children: "Request Authorization"
-      }
-    ),
-    authorizationStatus === "sharingDenied" && /* @__PURE__ */ jsxRuntimeExports.jsx(
-      "button",
-      {
-        onClick: () => {
-          CapacitorHealthKit.requestAuthorization({
-            all: ["weight"],
-            read: ["weight"],
-            write: ["weight"]
-          }).then(setAuthorizationStatus);
-        },
-        children: "Request Authorization"
-      }
-    ),
-    /* @__PURE__ */ jsxRuntimeExports.jsx("h2", { children: "Body Mass" }),
-    /* @__PURE__ */ jsxRuntimeExports.jsx("ul", { children: bodyMassEntries.map((entry) => /* @__PURE__ */ jsxRuntimeExports.jsxs("li", { children: [
-      entry.date,
-      /* @__PURE__ */ jsxRuntimeExports.jsx("br", {}),
-      entry.value,
-      " ",
-      entry.unit
-    ] }, entry.uuid)) }),
-    /* @__PURE__ */ jsxRuntimeExports.jsx("h2", { children: "Weight" }),
-    /* @__PURE__ */ jsxRuntimeExports.jsx("ul", { children: weightEntries.map((entry) => /* @__PURE__ */ jsxRuntimeExports.jsxs("li", { children: [
-      entry.date,
-      /* @__PURE__ */ jsxRuntimeExports.jsx("br", {}),
-      entry.value,
-      " ",
-      entry.unit
-    ] }, entry.uuid)) })
+    ] })
   ] });
 }
 createRoot(document.getElementById("root")).render(

@@ -1,4 +1,4 @@
-import { W as WebPlugin } from "./index-CBE5CC0E.js";
+import { W as WebPlugin } from "./index-B7SjfCau.js";
 class CapacitorHealthKitWeb extends WebPlugin {
   async requestAuthorization(_options) {
     throw new Error("Not available on web");
