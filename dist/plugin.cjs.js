@@ -21,6 +21,9 @@ class CapacitorHealthKitWeb extends core.WebPlugin {
     async getBodyMassEntries(_options) {
         throw new Error('Not available on web');
     }
+    async setBodyMassEntry(_options) {
+        throw new Error('Not available on web');
+    }
 }
 
 var web = /*#__PURE__*/Object.freeze({

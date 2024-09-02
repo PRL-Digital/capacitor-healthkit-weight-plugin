@@ -7,11 +7,11 @@ public class CapacitorHealthKit: CAPPlugin, CAPBridgedPlugin {
     public let identifier = "CapacitorHealthKit"
     public let jsName = "CapacitorHealthKit"
     public let pluginMethods: [CAPPluginMethod] = [
-        // Return sync status
         CAPPluginMethod(name: "requestAuthorization", returnType: CAPPluginReturnPromise),
         CAPPluginMethod(name: "isAvailable", returnType: CAPPluginReturnPromise),
         CAPPluginMethod(name: "getAuthorizationStatus", returnType: CAPPluginReturnPromise),
-        CAPPluginMethod(name: "getBodyMassEntries", returnType: CAPPluginReturnPromise)
+        CAPPluginMethod(name: "getBodyMassEntries", returnType: CAPPluginReturnPromise),
+        CAPPluginMethod(name: "setBodyMassEntry", returnType: CAPPluginReturnPromise)
     ]
 
     private let healthStore = HKHealthStore()
@@ -117,6 +117,32 @@ public class CapacitorHealthKit: CAPPlugin, CAPBridgedPlugin {
         
         healthStore.execute(bodyMassQuery)
     }
+
+    @objc func setBodyMassEntry(_ call: CAPPluginCall) {
+        guard let value = call.getDouble("value") else {
+            return call.reject("Value is required.")
+        }
+        guard let dateString = call.getString("date") else {
+            return call.reject("Date is required.")
+        }
+        
+        guard let bodyMassType = HKQuantityType.quantityType(forIdentifier: .bodyMass) else {
+            return call.reject("Body mass type is not available.")
+        }
+        
+        let date = getDateFromString(inputDate: dateString)
+        let quantity = HKQuantity(unit: HKUnit.gramUnit(with: .kilo), doubleValue: value)
+        let sample = HKQuantitySample(type: bodyMassType, quantity: quantity, start: date, end: date)
+        
+        healthStore.save(sample) { success, error in
+            if let error = error {
+                call.reject("Failed to save body mass entry: \(error.localizedDescription)")
+            } else {
+                call.resolve()
+            }
+        }
+    }
+
 }
 
 extension AuthorizationStatus: CustomStringConvertible {

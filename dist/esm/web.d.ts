@@ -7,4 +7,8 @@ export declare class CapacitorHealthKitWeb extends WebPlugin implements Capacito
         status: AuthorizationStatus;
     }>;
     getBodyMassEntries(_options: BodyMassQueryOptions): Promise<BodyMassQueryOutput>;
+    setBodyMassEntry(_options: {
+        value: number;
+        date: string;
+    }): Promise<void>;
 }

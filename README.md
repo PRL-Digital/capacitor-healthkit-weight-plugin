@@ -17,6 +17,7 @@ npx cap sync
 * [`isAvailable()`](#isavailable)
 * [`getAuthorizationStatus(...)`](#getauthorizationstatus)
 * [`getBodyMassEntries(...)`](#getbodymassentries)
+* [`setBodyMassEntry(...)`](#setbodymassentry)
 * [Interfaces](#interfaces)
 * [Type Aliases](#type-aliases)
 
@@ -73,6 +74,19 @@ getBodyMassEntries(options: BodyMassQueryOptions) => Promise<BodyMassQueryOutput
 | **`options`** | <code><a href="#bodymassqueryoptions">BodyMassQueryOptions</a></code> |
 
 **Returns:** <code>Promise&lt;<a href="#bodymassqueryoutput">BodyMassQueryOutput</a>&gt;</code>
+
+--------------------
+
+
+### setBodyMassEntry(...)
+
+```typescript
+setBodyMassEntry(options: { value: number; date: string; }) => Promise<void>
+```
+
+| Param         | Type                                          |
+| ------------- | --------------------------------------------- |
+| **`options`** | <code>{ value: number; date: string; }</code> |
 
 --------------------
 

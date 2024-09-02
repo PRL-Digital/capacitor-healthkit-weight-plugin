@@ -7577,11 +7577,45 @@ registerPlugin("CapacitorHttp", {
   web: () => new CapacitorHttpPluginWeb()
 });
 const CapacitorHealthKit = registerPlugin("CapacitorHealthKit", {
-  web: () => __vitePreload(() => import("./web-CMnkmTMT.js"), true ? [] : void 0).then((m2) => new m2.CapacitorHealthKitWeb())
+  web: () => __vitePreload(() => import("./web-kjSgWs2r.js"), true ? [] : void 0).then((m2) => new m2.CapacitorHealthKitWeb())
 });
+const styles = {
+  form: {
+    display: "flex",
+    flexDirection: "column",
+    maxWidth: "300px",
+    margin: "0"
+  },
+  formGroup: {
+    marginBottom: "15px"
+  },
+  label: {
+    display: "block",
+    marginBottom: "5px",
+    fontWeight: "bold"
+  },
+  input: {
+    width: "100%",
+    padding: "8px",
+    fontSize: "16px",
+    borderRadius: "4px",
+    border: "1px solid #ccc"
+  },
+  button: {
+    padding: "10px 15px",
+    fontSize: "16px",
+    backgroundColor: "#4CAF50",
+    color: "white",
+    border: "none",
+    borderRadius: "4px",
+    cursor: "pointer"
+  }
+};
 function App() {
   const [weightEntries, setWeightEntries] = reactExports.useState([]);
   const [authorizationStatus, setAuthorizationStatus] = reactExports.useState(null);
+  const [newWeight, setNewWeight] = reactExports.useState("");
+  const [newDate, setNewDate] = reactExports.useState("");
   reactExports.useEffect(() => {
     checkAuthorizationStatus();
   }, []);
@@ -7628,11 +7662,65 @@ function App() {
       console.error("Error fetching weight entries:", error);
     }
   };
+  const addWeightEntry = async (e) => {
+    e.preventDefault();
+    if (!newWeight || !newDate) {
+      alert("Please enter both weight and date");
+      return;
+    }
+    try {
+      await CapacitorHealthKit.setBodyMassEntry({
+        value: parseFloat(newWeight),
+        date: new Date(newDate).toISOString()
+      });
+      alert("Weight entry added successfully");
+      setNewWeight("");
+      setNewDate("");
+      fetchWeightEntries();
+    } catch (error) {
+      console.error("Error adding weight entry:", error);
+      alert("Failed to add weight entry");
+    }
+  };
   return /* @__PURE__ */ jsxRuntimeExports.jsxs("div", { children: [
     /* @__PURE__ */ jsxRuntimeExports.jsx("h1", { children: "HealthKit Weight Tracker" }),
-    /* @__PURE__ */ jsxRuntimeExports.jsx("p", { children: "This app shows your recent weight entries from HealthKit." }),
+    /* @__PURE__ */ jsxRuntimeExports.jsx("p", { children: "This app shows your recent weight entries from HealthKit and allows you to add new entries." }),
     authorizationStatus !== "sharingAuthorized" && /* @__PURE__ */ jsxRuntimeExports.jsx("button", { onClick: requestAuthorization, children: "Request HealthKit Authorization" }),
     authorizationStatus === "sharingAuthorized" && /* @__PURE__ */ jsxRuntimeExports.jsxs("div", { children: [
+      /* @__PURE__ */ jsxRuntimeExports.jsx("h2", { children: "Add New Weight Entry" }),
+      /* @__PURE__ */ jsxRuntimeExports.jsxs("form", { onSubmit: addWeightEntry, style: styles.form, children: [
+        /* @__PURE__ */ jsxRuntimeExports.jsxs("div", { style: styles.formGroup, children: [
+          /* @__PURE__ */ jsxRuntimeExports.jsx("label", { htmlFor: "weight", style: styles.label, children: "Weight (kg):" }),
+          /* @__PURE__ */ jsxRuntimeExports.jsx(
+            "input",
+            {
+              id: "weight",
+              type: "number",
+              step: "0.1",
+              value: newWeight,
+              onChange: (e) => setNewWeight(e.target.value),
+              placeholder: "Enter weight",
+              required: true,
+              style: styles.input
+            }
+          )
+        ] }),
+        /* @__PURE__ */ jsxRuntimeExports.jsxs("div", { style: styles.formGroup, children: [
+          /* @__PURE__ */ jsxRuntimeExports.jsx("label", { htmlFor: "date", style: styles.label, children: "Date and Time:" }),
+          /* @__PURE__ */ jsxRuntimeExports.jsx(
+            "input",
+            {
+              id: "date",
+              type: "datetime-local",
+              value: newDate,
+              onChange: (e) => setNewDate(e.target.value),
+              required: true,
+              style: styles.input
+            }
+          )
+        ] }),
+        /* @__PURE__ */ jsxRuntimeExports.jsx("button", { type: "submit", style: styles.button, children: "Add Weight Entry" })
+      ] }),
       /* @__PURE__ */ jsxRuntimeExports.jsx("h2", { children: "Weight Entries" }),
       weightEntries.length === 0 ? /* @__PURE__ */ jsxRuntimeExports.jsx("p", { children: "No weight entries found for the last 30 days." }) : /* @__PURE__ */ jsxRuntimeExports.jsx("ul", { children: weightEntries.map((entry) => /* @__PURE__ */ jsxRuntimeExports.jsxs("li", { children: [
         "Date: ",

@@ -70,6 +70,22 @@
           "BodyMassQueryOptions"
         ],
         "slug": "getbodymassentries"
+      },
+      {
+        "name": "setBodyMassEntry",
+        "signature": "(options: { value: number; date: string; }) => Promise<void>",
+        "parameters": [
+          {
+            "name": "options",
+            "docs": "",
+            "type": "{ value: number; date: string; }"
+          }
+        ],
+        "returns": "Promise<void>",
+        "tags": [],
+        "docs": "",
+        "complexTypes": [],
+        "slug": "setbodymassentry"
       }
     ],
     "properties": []

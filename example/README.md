@@ -1,12 +1,29 @@
-## Created with Capacitor Create App
+## Capacitor Healthkit Weight Plugin Example
 
-This app was created using [`@capacitor/create-app`](https://github.com/ionic-team/create-capacitor-app),
-and comes with a very minimal shell for building an app.
-
-### Running this example
+### Running
 
 To run the provided example, you can use `npm start` command.
 
 ```bash
 npm start
+```
+
+To run on an iOS mobile device
+
+** Build the app \***
+
+```
+npm run build
+```
+
+** Sync to Xcode **
+
+```
+npx cap sync ios
+```
+
+** Open Xcode **
+
+```
+npx cap open ios
 ```

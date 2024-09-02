@@ -12,5 +12,8 @@ export class CapacitorHealthKitWeb extends WebPlugin {
     async getBodyMassEntries(_options) {
         throw new Error('Not available on web');
     }
+    async setBodyMassEntry(_options) {
+        throw new Error('Not available on web');
+    }
 }
 //# sourceMappingURL=web.js.map

@@ -5,6 +5,10 @@ export interface CapacitorHealthKitPlugin {
         status: AuthorizationStatus;
     }>;
     getBodyMassEntries(options: BodyMassQueryOptions): Promise<BodyMassQueryOutput>;
+    setBodyMassEntry(options: {
+        value: number;
+        date: string;
+    }): Promise<void>;
 }
 export interface RequestAuthorizationOptions {
     all?: string[];
