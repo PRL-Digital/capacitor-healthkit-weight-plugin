@@ -1,0 +1,11 @@
+# Folders
+node_modules
+src
+example
+
+# Output of 'npm pack'
+*.tgz
+
+# Files
+.gitignore
+rollup.config.js
