@@ -1,6 +1,10 @@
 # capacitor-healthkit-weight
 
-NA
+Plugin to get and set Apple Healthkit weight data. Created to be used on a private project.
+
+You are welcome to use this package, and I will keep updated when I have the time.
+
+PRs will be considered, but I am unlikely to respond to issues on this repo.
 
 ## Install
 
@@ -13,13 +17,13 @@ npx cap sync
 
 <docgen-index>
 
-* [`requestAuthorization(...)`](#requestauthorization)
-* [`isAvailable()`](#isavailable)
-* [`getAuthorizationStatus(...)`](#getauthorizationstatus)
-* [`getBodyMassEntries(...)`](#getbodymassentries)
-* [`setBodyMassEntry(...)`](#setbodymassentry)
-* [Interfaces](#interfaces)
-* [Type Aliases](#type-aliases)
+- [`requestAuthorization(...)`](#requestauthorization)
+- [`isAvailable()`](#isavailable)
+- [`getAuthorizationStatus(...)`](#getauthorizationstatus)
+- [`getBodyMassEntries(...)`](#getbodymassentries)
+- [`setBodyMassEntry(...)`](#setbodymassentry)
+- [Interfaces](#interfaces)
+- [Type Aliases](#type-aliases)
 
 </docgen-index>
 
@@ -36,8 +40,7 @@ requestAuthorization(options: RequestAuthorizationOptions) => Promise<void>
 | ------------- | ----------------------------------------------------------------------------------- |
 | **`options`** | <code><a href="#requestauthorizationoptions">RequestAuthorizationOptions</a></code> |
 
---------------------
-
+---
 
 ### isAvailable()
 
@@ -45,8 +48,7 @@ requestAuthorization(options: RequestAuthorizationOptions) => Promise<void>
 isAvailable() => Promise<void>
 ```
 
---------------------
-
+---
 
 ### getAuthorizationStatus(...)
 
@@ -60,8 +62,7 @@ getAuthorizationStatus(options: GetAuthorizationStatusOptions) => Promise<{ stat
 
 **Returns:** <code>Promise&lt;{ status: <a href="#authorizationstatus">AuthorizationStatus</a>; }&gt;</code>
 
---------------------
-
+---
 
 ### getBodyMassEntries(...)
 
@@ -75,8 +76,7 @@ getBodyMassEntries(options: BodyMassQueryOptions) => Promise<BodyMassQueryOutput
 
 **Returns:** <code>Promise&lt;<a href="#bodymassqueryoutput">BodyMassQueryOutput</a>&gt;</code>
 
---------------------
-
+---
 
 ### setBodyMassEntry(...)
 
@@ -88,11 +88,9 @@ setBodyMassEntry(options: { value: number; date: string; }) => Promise<void>
 | ------------- | --------------------------------------------- |
 | **`options`** | <code>{ value: number; date: string; }</code> |
 
---------------------
-
+---
 
 ### Interfaces
-
 
 #### RequestAuthorizationOptions
 
@@ -102,20 +100,17 @@ setBodyMassEntry(options: { value: number; date: string; }) => Promise<void>
 | **`read`**  | <code>string[]</code> |
 | **`write`** | <code>string[]</code> |
 
-
 #### GetAuthorizationStatusOptions
 
 | Prop             | Type                |
 | ---------------- | ------------------- |
 | **`sampleType`** | <code>string</code> |
 
-
 #### BodyMassQueryOutput
 
 | Prop       | Type                                                                                                                    |
 | ---------- | ----------------------------------------------------------------------------------------------------------------------- |
 | **`data`** | <code>{ date: string; value: number; unit: string; uuid: string; sourceName: string; sourceBundleId: string; }[]</code> |
-
 
 #### BodyMassQueryOptions
 
@@ -125,9 +120,7 @@ setBodyMassEntry(options: { value: number; date: string; }) => Promise<void>
 | **`endDate`**   | <code>string</code> |
 | **`limit`**     | <code>number</code> |
 
-
 ### Type Aliases
-
 
 #### AuthorizationStatus
 
