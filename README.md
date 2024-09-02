@@ -1,11 +1,11 @@
-# capacitor-healthkit
+# capacitor-healthkit-weight
 
 NA
 
 ## Install
 
 ```bash
-npm install capacitor-healthkit
+npm install capacitor-healthkit-weight
 npx cap sync
 ```
 

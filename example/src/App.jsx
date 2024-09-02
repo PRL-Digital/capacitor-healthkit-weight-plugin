@@ -1,5 +1,5 @@
 import React, { useEffect, useState } from 'react';
-import { CapacitorHealthKit } from 'capacitor-healthkit-plugin';
+import { CapacitorHealthKit } from 'capacitor-healthkit-weight-plugin';
 
 const styles = {
   form: {

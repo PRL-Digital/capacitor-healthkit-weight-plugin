@@ -2,27 +2,21 @@ PODS:
   - Capacitor (6.1.2):
     - CapacitorCordova
   - CapacitorCordova (6.1.2)
-  - CapacitorHealthkitPlugin (0.0.6):
-    - Capacitor
 
 DEPENDENCIES:
   - "Capacitor (from `../../node_modules/@capacitor/ios`)"
   - "CapacitorCordova (from `../../node_modules/@capacitor/ios`)"
-  - CapacitorHealthkitPlugin (from `../../..`)
 
 EXTERNAL SOURCES:
   Capacitor:
     :path: "../../node_modules/@capacitor/ios"
   CapacitorCordova:
     :path: "../../node_modules/@capacitor/ios"
-  CapacitorHealthkitPlugin:
-    :path: "../../.."
 
 SPEC CHECKSUMS:
   Capacitor: 679f9673fdf30597493a6362a5d5bf233d46abc2
   CapacitorCordova: f48c89f96c319101cd2f0ce8a2b7449b5fb8b3dd
-  CapacitorHealthkitPlugin: a4e819a3fd5f1162b695273cac5c2e316bc20182
 
-PODFILE CHECKSUM: 9f34298571155cab25676077fac910e2d642284d
+PODFILE CHECKSUM: 8ab55909c5de2b217f9841e5e5b329f5ec901553
 
 COCOAPODS: 1.15.2
