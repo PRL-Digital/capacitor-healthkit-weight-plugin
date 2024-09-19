@@ -22,6 +22,7 @@ npx cap sync
 * [`getAuthorizationStatus(...)`](#getauthorizationstatus)
 * [`getBodyMassEntries(...)`](#getbodymassentries)
 * [`setBodyMassEntry(...)`](#setbodymassentry)
+* [`getUserIdentifier()`](#getuseridentifier)
 * [Interfaces](#interfaces)
 * [Type Aliases](#type-aliases)
 
@@ -91,6 +92,17 @@ setBodyMassEntry(options: { value: number; date: string; }) => Promise<void>
 | Param         | Type                                          |
 | ------------- | --------------------------------------------- |
 | **`options`** | <code>{ value: number; date: string; }</code> |
+
+--------------------
+
+
+### getUserIdentifier()
+
+```typescript
+getUserIdentifier() => Promise<{ value: string; }>
+```
+
+**Returns:** <code>Promise&lt;{ value: string; }&gt;</code>
 
 --------------------
 

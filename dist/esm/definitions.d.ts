@@ -9,6 +9,9 @@ export interface CapacitorHealthKitPlugin {
         value: number;
         date: string;
     }): Promise<void>;
+    getUserIdentifier(): Promise<{
+        value: string;
+    }>;
 }
 export interface RequestAuthorizationOptions {
     all?: string[];

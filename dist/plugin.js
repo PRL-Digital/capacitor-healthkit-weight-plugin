@@ -21,6 +21,9 @@ var CapacitorHealthKit = (function (exports, core) {
         async setBodyMassEntry(_options) {
             throw new Error('Not available on web');
         }
+        async getUserIdentifier() {
+            throw new Error('Not available on web');
+        }
     }
 
     var web = /*#__PURE__*/Object.freeze({

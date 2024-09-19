@@ -11,4 +11,7 @@ export declare class CapacitorHealthKitWeb extends WebPlugin implements Capacito
         value: number;
         date: string;
     }): Promise<void>;
+    getUserIdentifier(): Promise<{
+        value: string;
+    }>;
 }

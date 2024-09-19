@@ -86,6 +86,16 @@
         "docs": "",
         "complexTypes": [],
         "slug": "setbodymassentry"
+      },
+      {
+        "name": "getUserIdentifier",
+        "signature": "() => Promise<{ value: string; }>",
+        "parameters": [],
+        "returns": "Promise<{ value: string; }>",
+        "tags": [],
+        "docs": "",
+        "complexTypes": [],
+        "slug": "getuseridentifier"
       }
     ],
     "properties": []
