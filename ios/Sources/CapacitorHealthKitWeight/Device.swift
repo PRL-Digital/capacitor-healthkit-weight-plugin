@@ -1,5 +1,5 @@
 import Foundation
-import Healthkit
+import HealthKit
 
 struct DeviceInformation {
     let name: String?

@@ -1,6 +1,6 @@
 import Foundation
 import Capacitor
-import Healthkit
+import HealthKit
 
 @objc(CapacitorHealthkitWeight)
 public class CapacitorHealthkitWeight: CAPPlugin, CAPBridgedPlugin {
@@ -11,7 +11,7 @@ public class CapacitorHealthkitWeight: CAPPlugin, CAPBridgedPlugin {
         CAPPluginMethod(name: "isAvailable", returnType: CAPPluginReturnPromise),
         CAPPluginMethod(name: "getAuthorizationStatus", returnType: CAPPluginReturnPromise),
         CAPPluginMethod(name: "getBodyMassEntries", returnType: CAPPluginReturnPromise),
-        CAPPluginMethod(name: "setBodyMassEntry", returnType: CAPPluginReturnPromise)
+        CAPPluginMethod(name: "setBodyMassEntry", returnType: CAPPluginReturnPromise),
         CAPPluginMethod(name: "getUserIdentifier", returnType: CAPPluginReturnPromise)
     ]
 
