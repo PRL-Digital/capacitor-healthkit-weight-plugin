@@ -4,6 +4,7 @@ export interface CapacitorHealthKitPlugin {
   getAuthorizationStatus(options: GetAuthorizationStatusOptions): Promise<{ status: AuthorizationStatus }>;
   getBodyMassEntries(options: BodyMassQueryOptions): Promise<BodyMassQueryOutput>;
   setBodyMassEntry(options: { value: number; date: string }): Promise<void>;
+  getUserIdentifier(): Promise<{ value: string }>;
 }
 
 export interface RequestAuthorizationOptions {

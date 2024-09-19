@@ -29,4 +29,8 @@ export class CapacitorHealthKitWeb extends WebPlugin implements CapacitorHealthK
   async setBodyMassEntry(_options: { value: number; date: string }): Promise<void> {
     throw new Error('Not available on web');
   }
+
+  async getUserIdentifier(): Promise<{ value: string }> {
+    throw new Error('Not available on web');
+  }
 }

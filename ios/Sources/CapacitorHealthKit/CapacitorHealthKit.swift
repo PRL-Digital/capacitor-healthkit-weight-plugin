@@ -12,6 +12,7 @@ public class CapacitorHealthKit: CAPPlugin, CAPBridgedPlugin {
         CAPPluginMethod(name: "getAuthorizationStatus", returnType: CAPPluginReturnPromise),
         CAPPluginMethod(name: "getBodyMassEntries", returnType: CAPPluginReturnPromise),
         CAPPluginMethod(name: "setBodyMassEntry", returnType: CAPPluginReturnPromise)
+        CAPPluginMethod(name: "getUserIdentifier", returnType: CAPPluginReturnPromise)
     ]
 
     private let healthStore = HKHealthStore()
@@ -141,6 +142,17 @@ public class CapacitorHealthKit: CAPPlugin, CAPBridgedPlugin {
                 call.resolve()
             }
         }
+    }
+
+    @objc func getUserIdentifier(_ call: CAPPluginCall) {
+        guard HKHealthStore.isHealthDataAvailable() else {
+            return call.reject("Health data is not available.")
+        }
+
+        let identifier = healthStore.hash
+        call.resolve([
+            "identifier": String(identifier)
+        ])
     }
 
 }
