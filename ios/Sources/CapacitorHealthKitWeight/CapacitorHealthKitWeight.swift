@@ -2,10 +2,10 @@ import Foundation
 import Capacitor
 import HealthKit
 
-@objc(CapacitorHealthKit)
-public class CapacitorHealthKit: CAPPlugin, CAPBridgedPlugin {
-    public let identifier = "CapacitorHealthKit"
-    public let jsName = "CapacitorHealthKit"
+@objc(CapacitorHealthKitWeight)
+public class CapacitorHealthKitWeight: CAPPlugin, CAPBridgedPlugin {
+    public let identifier = "CapacitorHealthKitWeight"
+    public let jsName = "CapacitorHealthKitWeight"
     public let pluginMethods: [CAPPluginMethod] = [
         CAPPluginMethod(name: "requestAuthorization", returnType: CAPPluginReturnPromise),
         CAPPluginMethod(name: "isAvailable", returnType: CAPPluginReturnPromise),

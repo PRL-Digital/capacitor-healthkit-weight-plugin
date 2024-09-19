@@ -3,8 +3,8 @@
   "appName": "Healthkit App Test",
   "webDir": "dist",
   "plugins": {
-    "CapacitorHealthKit": {
-      "ios": "CapacitorHealthKit"
+    "CapacitorHealthKitWeight": {
+      "ios": "CapacitorHealthKitWeight"
     }
   },
   "ios": {

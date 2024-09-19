@@ -1,5 +1,5 @@
 import { WebPlugin } from '@capacitor/core';
-export class CapacitorHealthKitWeb extends WebPlugin {
+export class CapacitorHealthKitWeightWeb extends WebPlugin {
     async requestAuthorization(_options) {
         throw new Error('Not available on web');
     }

@@ -2,14 +2,14 @@ import { WebPlugin } from '@capacitor/core';
 
 import type {
   AuthorizationStatus,
-  CapacitorHealthKitPlugin,
+  CapacitorHealthKitWeightPlugin,
   GetAuthorizationStatusOptions,
   BodyMassQueryOptions,
   BodyMassQueryOutput,
   RequestAuthorizationOptions,
 } from './definitions';
 
-export class CapacitorHealthKitWeb extends WebPlugin implements CapacitorHealthKitPlugin {
+export class CapacitorHealthKitWeightWeb extends WebPlugin implements CapacitorHealthKitWeightPlugin {
   async requestAuthorization(_options: RequestAuthorizationOptions): Promise<void> {
     throw new Error('Not available on web');
   }
