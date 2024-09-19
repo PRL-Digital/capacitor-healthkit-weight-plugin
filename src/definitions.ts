@@ -1,4 +1,4 @@
-export interface CapacitorHealthKitWeightPlugin {
+export interface CapacitorHealthkitWeightPlugin {
   requestAuthorization(options: RequestAuthorizationOptions): Promise<void>;
   isAvailable(): Promise<void>;
   getAuthorizationStatus(options: GetAuthorizationStatusOptions): Promise<{ status: AuthorizationStatus }>;

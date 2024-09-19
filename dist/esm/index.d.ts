@@ -1,4 +1,4 @@
-import type { CapacitorHealthKitWeightPlugin } from './definitions';
-declare const CapacitorHealthKitWeight: CapacitorHealthKitWeightPlugin;
+import type { CapacitorHealthkitWeightPlugin } from './definitions';
+declare const CapacitorHealthkitWeight: CapacitorHealthkitWeightPlugin;
 export * from './definitions';
-export { CapacitorHealthKitWeight };
+export { CapacitorHealthkitWeight };

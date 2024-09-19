@@ -2,27 +2,27 @@
 import PackageDescription
 
 let package = Package(
-    name: "CapacitorHealthKitWeight",
+    name: "CapacitorHealthkitWeight",
     platforms: [.iOS(.v13)],
     products: [
         .library(
-            name: "CapacitorHealthKitWeight",
-            targets: ["CapacitorHealthKitWeight"])
+            name: "CapacitorHealthkitWeight",
+            targets: ["CapacitorHealthkitWeight"])
     ],
     dependencies: [
         .package(url: "https://github.com/ionic-team/capacitor-swift-pm.git", branch: "main")
     ],
     targets: [
         .target(
-            name: "CapacitorHealthKitWeight",
+            name: "CapacitorHealthkitWeight",
             dependencies: [
                 .product(name: "Capacitor", package: "capacitor-swift-pm"),
                 .product(name: "Cordova", package: "capacitor-swift-pm")
             ],
-            path: "ios/Sources/CapacitorHealthKitWeight"),
+            path: "ios/Sources/CapacitorHealthkitWeight"),
         .testTarget(
-            name: "CapacitorHealthKitWeightTests",
-            dependencies: ["CapacitorHealthKitWeight"],
-            path: "ios/Tests/CapacitorHealthKitWeightTests")
+            name: "CapacitorHealthkitWeightTests",
+            dependencies: ["CapacitorHealthkitWeight"],
+            path: "ios/Tests/CapacitorHealthkitWeightTests")
     ]
 )

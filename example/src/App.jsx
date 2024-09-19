@@ -1,5 +1,5 @@
 import React, { useEffect, useState } from 'react';
-import { CapacitorHealthKit } from 'capacitor-healthkit-weight-plugin';
+import { CapacitorHealthkit } from 'capacitor-healthkit-weight-plugin';
 
 const styles = {
   form: {
@@ -52,7 +52,7 @@ function App() {
 
   const checkAuthorizationStatus = async () => {
     try {
-      const result = await CapacitorHealthKit.getAuthorizationStatus({
+      const result = await CapacitorHealthkit.getAuthorizationStatus({
         sampleType: 'weight',
       });
       console.log(result);
@@ -64,7 +64,7 @@ function App() {
 
   const requestAuthorization = async () => {
     try {
-      await CapacitorHealthKit.requestAuthorization({
+      await CapacitorHealthkit.requestAuthorization({
         all: ['weight'],
         read: ['weight'],
         write: ['weight'],
@@ -79,7 +79,7 @@ function App() {
     try {
       const startDate = new Date(Date.now() - 30 * 24 * 60 * 60 * 1000).toISOString(); // Last 30 days
       const endDate = new Date().toISOString();
-      const result = await CapacitorHealthKit.getBodyMassEntries({
+      const result = await CapacitorHealthkit.getBodyMassEntries({
         startDate,
         endDate,
         limit: 10,
@@ -98,7 +98,7 @@ function App() {
       return;
     }
     try {
-      await CapacitorHealthKit.setBodyMassEntry({
+      await CapacitorHealthkit.setBodyMassEntry({
         value: parseFloat(newWeight),
         date: new Date(newDate).toISOString(),
       });
@@ -114,11 +114,11 @@ function App() {
 
   return (
     <div>
-      <h1>HealthKit Weight Tracker</h1>
-      <p>This app shows your recent weight entries from HealthKit and allows you to add new entries.</p>
+      <h1>Healthkit Weight Tracker</h1>
+      <p>This app shows your recent weight entries from Healthkit and allows you to add new entries.</p>
 
       {authorizationStatus !== 'sharingAuthorized' && (
-        <button onClick={requestAuthorization}>Request HealthKit Authorization</button>
+        <button onClick={requestAuthorization}>Request Healthkit Authorization</button>
       )}
 
       {authorizationStatus === 'sharingAuthorized' && (

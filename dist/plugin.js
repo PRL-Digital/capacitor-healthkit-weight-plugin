@@ -1,11 +1,11 @@
-var CapacitorHealthKitWeight = (function (exports, core) {
+var CapacitorHealthkitWeight = (function (exports, core) {
     'use strict';
 
-    const CapacitorHealthKitWeight = core.registerPlugin('CapacitorHealthKitWeight', {
-        web: () => Promise.resolve().then(function () { return web; }).then((m) => new m.CapacitorHealthKitWeightWeb()),
+    const CapacitorHealthkitWeight = core.registerPlugin('CapacitorHealthkitWeight', {
+        web: () => Promise.resolve().then(function () { return web; }).then((m) => new m.CapacitorHealthkitWeightWeb()),
     });
 
-    class CapacitorHealthKitWeightWeb extends core.WebPlugin {
+    class CapacitorHealthkitWeightWeb extends core.WebPlugin {
         async requestAuthorization(_options) {
             throw new Error('Not available on web');
         }
@@ -28,10 +28,10 @@ var CapacitorHealthKitWeight = (function (exports, core) {
 
     var web = /*#__PURE__*/Object.freeze({
         __proto__: null,
-        CapacitorHealthKitWeightWeb: CapacitorHealthKitWeightWeb
+        CapacitorHealthkitWeightWeb: CapacitorHealthkitWeightWeb
     });
 
-    exports.CapacitorHealthKitWeight = CapacitorHealthKitWeight;
+    exports.CapacitorHealthkitWeight = CapacitorHealthkitWeight;
 
     Object.defineProperty(exports, '__esModule', { value: true });
 

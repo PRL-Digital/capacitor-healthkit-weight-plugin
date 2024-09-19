@@ -1,7 +1,7 @@
 import { registerPlugin } from '@capacitor/core';
-const CapacitorHealthKitWeight = registerPlugin('CapacitorHealthKitWeight', {
-    web: () => import('./web').then((m) => new m.CapacitorHealthKitWeightWeb()),
+const CapacitorHealthkitWeight = registerPlugin('CapacitorHealthkitWeight', {
+    web: () => import('./web').then((m) => new m.CapacitorHealthkitWeightWeb()),
 });
 export * from './definitions';
-export { CapacitorHealthKitWeight };
+export { CapacitorHealthkitWeight };
 //# sourceMappingURL=index.js.map

@@ -1,6 +1,6 @@
 import { WebPlugin } from '@capacitor/core';
-import type { AuthorizationStatus, CapacitorHealthKitWeightPlugin, GetAuthorizationStatusOptions, BodyMassQueryOptions, BodyMassQueryOutput, RequestAuthorizationOptions } from './definitions';
-export declare class CapacitorHealthKitWeightWeb extends WebPlugin implements CapacitorHealthKitWeightPlugin {
+import type { AuthorizationStatus, CapacitorHealthkitWeightPlugin, GetAuthorizationStatusOptions, BodyMassQueryOptions, BodyMassQueryOutput, RequestAuthorizationOptions } from './definitions';
+export declare class CapacitorHealthkitWeightWeb extends WebPlugin implements CapacitorHealthkitWeightPlugin {
     requestAuthorization(_options: RequestAuthorizationOptions): Promise<void>;
     isAvailable(): Promise<void>;
     getAuthorizationStatus(_options: GetAuthorizationStatusOptions): Promise<{

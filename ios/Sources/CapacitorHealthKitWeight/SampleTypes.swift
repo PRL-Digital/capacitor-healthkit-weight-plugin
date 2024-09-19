@@ -1,5 +1,5 @@
 import Foundation
-import HealthKit
+import Healthkit
 
 func getSampleType(sampleName: String) -> HKSampleType? {
     switch sampleName {
