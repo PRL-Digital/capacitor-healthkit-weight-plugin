@@ -2,6 +2,10 @@
 
 All notable changes to this project will be documented in this file.
 
+## [0.0.11] - 07-10-24
+
+General third party updates
+
 ## [0.0.9] - 19-09-24
 
 Updated naming convention.
