@@ -1,5 +1,5 @@
 import React, { useEffect, useState } from 'react';
-import { CapacitorHealthkit } from 'capacitor-healthkit-weight-plugin';
+import { CapacitorHealthkitWeight } from 'capacitor-healthkit-weight-plugin';
 
 const styles = {
   form: {
@@ -52,7 +52,7 @@ function App() {
 
   const checkAuthorizationStatus = async () => {
     try {
-      const result = await CapacitorHealthkit.getAuthorizationStatus({
+      const result = await CapacitorHealthkitWeight.getAuthorizationStatus({
         sampleType: 'weight',
       });
       console.log(result);
@@ -64,7 +64,7 @@ function App() {
 
   const requestAuthorization = async () => {
     try {
-      await CapacitorHealthkit.requestAuthorization({
+      await CapacitorHealthkitWeight.requestAuthorization({
         all: ['weight'],
         read: ['weight'],
         write: ['weight'],
@@ -79,7 +79,7 @@ function App() {
     try {
       const startDate = new Date(Date.now() - 30 * 24 * 60 * 60 * 1000).toISOString(); // Last 30 days
       const endDate = new Date().toISOString();
-      const result = await CapacitorHealthkit.getBodyMassEntries({
+      const result = await CapacitorHealthkitWeight.getBodyMassEntries({
         startDate,
         endDate,
         limit: 10,
@@ -98,7 +98,7 @@ function App() {
       return;
     }
     try {
-      await CapacitorHealthkit.setBodyMassEntry({
+      await CapacitorHealthkitWeight.setBodyMassEntry({
         value: parseFloat(newWeight),
         date: new Date(newDate).toISOString(),
       });
