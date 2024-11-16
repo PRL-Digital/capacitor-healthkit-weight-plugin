@@ -1,4 +1,6 @@
-export default {
+const { defineConfig } = require('rollup');
+
+module.exports = defineConfig({
   input: 'dist/esm/index.js',
   output: [
     {
@@ -19,4 +21,4 @@ export default {
     },
   ],
   external: ['@capacitor/core'],
-};
+});

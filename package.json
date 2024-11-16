@@ -34,7 +34,7 @@
   "scripts": {
     "verify": "npm run verify:ios && npm run verify:android && npm run verify:web",
     "verify:ios": "xcodebuild -scheme CapacitorHealthkitWeight -destination generic/platform=iOS",
-    "verify:android": "cd android && ./gradlew clean build test && cd ..",
+    "verify:android": "cd android && ./gradle clean build test && cd ..",
     "verify:web": "npm run build",
     "lint": "npm run eslint && npm run prettier -- --check && npm run swiftlint -- lint",
     "fmt": "npm run eslint -- --fix && npm run prettier -- --write && npm run swiftlint -- --fix --format",
@@ -51,18 +51,18 @@
   "devDependencies": {
     "@capacitor/android": "^6.1.2",
     "@capacitor/core": "^6.1.2",
-    "@capacitor/docgen": "^0.2.2",
+    "@capacitor/docgen": "^0.3.0",
     "@capacitor/ios": "^6.1.2",
     "@ionic/eslint-config": "^0.4.0",
     "@ionic/prettier-config": "^4.0.0",
-    "@ionic/swiftlint-config": "^1.1.2",
-    "eslint": "^9.12.0",
+    "@ionic/swiftlint-config": "^2.0.0",
+    "eslint": "^9.15.0",
     "prettier": "~3.3.3",
-    "prettier-plugin-java": "~2.6.4",
+    "prettier-plugin-java": "~2.6.5",
     "rimraf": "^6.0.1",
-    "rollup": "^2.79.2",
-    "swiftlint": "^1.0.2",
-    "typescript": "^5.6.2"
+    "rollup": "^4.27.2",
+    "swiftlint": "^2.0.0",
+    "typescript": "^5.6.3"
   },
   "peerDependencies": {
     "@capacitor/core": "^6.0.0"
@@ -83,7 +83,7 @@
   },
   "dependencies": {
     "@capacitor/cli": "^6.1.2",
-    "@types/node": "^22.7.4"
+    "@types/node": "^22.9.0"
   },
   "packageManager": "yarn@3.6.1+sha512.de524adec81a6c3d7a26d936d439d2832e351cdfc5728f9d91f3fc85dd20b04391c038e9b4ecab11cae2b0dd9f0d55fd355af766bc5c1a7f8d25d96bb2a0b2ca"
 }

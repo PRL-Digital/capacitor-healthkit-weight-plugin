@@ -1,0 +1,7 @@
+<?xml version='1.0' encoding='utf-8'?>
+<resources>
+    <string name="app_name">Healthkit App Test</string>
+    <string name="title_activity_main">Healthkit App Test</string>
+    <string name="package_name">com.prldigital.healthkitapptest</string>
+    <string name="custom_url_scheme">com.prldigital.healthkitapptest</string>
+</resources>

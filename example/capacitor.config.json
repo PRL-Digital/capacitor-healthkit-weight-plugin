@@ -1,5 +1,5 @@
 {
-  "appId": "com.vibewithmaggie.healthkitapptest",
+  "appId": "com.prldigital.healthkitapptest",
   "appName": "Healthkit App Test",
   "webDir": "dist",
   "plugins": {

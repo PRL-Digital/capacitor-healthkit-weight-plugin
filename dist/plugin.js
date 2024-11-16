@@ -33,8 +33,6 @@ var CapacitorHealthkitWeight = (function (exports, core) {
 
     exports.CapacitorHealthkitWeight = CapacitorHealthkitWeight;
 
-    Object.defineProperty(exports, '__esModule', { value: true });
-
     return exports;
 
 })({}, capacitorExports);
